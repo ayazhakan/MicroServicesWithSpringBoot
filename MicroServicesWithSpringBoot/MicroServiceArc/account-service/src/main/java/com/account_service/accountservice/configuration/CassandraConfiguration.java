@@ -45,7 +45,6 @@ public class CassandraConfiguration extends AbstractCassandraConfiguration {
         return new String[] {"com.account_service"};
     }
 
-    @Bean
     @Override
     public CqlSessionFactoryBean cassandraSession() {
         CqlSessionFactoryBean cassandraSession = super.cassandraSession();//super session should be called only once

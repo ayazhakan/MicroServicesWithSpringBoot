@@ -11,35 +11,35 @@ import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(of="id")
+@EqualsAndHashCode(of= {"id"})
 @ToString
 @Table(value="accounts")
 public class Account implements Serializable {
-    @Getter
+
     @PrimaryKey
     private String id= UUID.randomUUID().toString();
 
-    @Getter
+
     @Setter
     @Column(value="uname")
     private String username;
 
-    @Getter
+
     @Setter
     @Column(value="email")
     private String email;
 
-    @Getter
+
     @Setter
     @Column(value="pwd")
     private String passwd;
 
-    @Getter
+
     @Setter
     @Column(value="createdAt")
     private Date createdAt;
 
-    @Getter
+
     @Setter
     @Column(value="isActive")
     private Boolean isActive;

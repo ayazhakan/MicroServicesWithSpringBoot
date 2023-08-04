@@ -8,17 +8,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="account-service" />
+        <module name="config-server" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="account-service" target="11" />
-      <module name="MicroServiceArc" target="11" />
-      <module name="service-parent" target="11" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="account-service" options="-parameters" />
+      <module name="config-server" options="-parameters" />
     </option>
   </component>
 </project>

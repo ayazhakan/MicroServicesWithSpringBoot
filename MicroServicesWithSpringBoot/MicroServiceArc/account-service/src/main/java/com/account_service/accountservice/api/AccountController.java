@@ -1,6 +1,7 @@
 package com.account_service.accountservice.api;
 
 import com.account_service.accountservice.service.AccountService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import com.account_service.accountservice.entity.Account;
@@ -10,15 +11,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("account")
+@RequiredArgsConstructor
 public class AccountController {
 
-
-
     private final AccountService accountService;
-
-    public AccountController(AccountService accountService) {
-        this.accountService =accountService;
-    }
 
 
     @GetMapping
