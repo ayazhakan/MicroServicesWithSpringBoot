@@ -9,6 +9,7 @@ import java.util.Date;
 import java.util.UUID;
 
 
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of= {"id"})
@@ -20,14 +21,30 @@ public class Account implements Serializable {
     private String id= UUID.randomUUID().toString();
 
 
+
     @Setter
     @Column(value="uname")
     private String username;
 
 
     @Setter
+    @Column(value="name")
+    private String name;
+
+
+    @Setter
+    @Column(value="surname")
+    private String surname;
+
+
+
+    @Setter
     @Column(value="email")
     private String email;
+
+    @Setter
+    @Column(value="birthDate")
+    private Date birthDate;
 
 
     @Setter

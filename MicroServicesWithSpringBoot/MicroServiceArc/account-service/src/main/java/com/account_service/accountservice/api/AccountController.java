@@ -1,12 +1,13 @@
 package com.account_service.accountservice.api;
 
+import com.account_service.accountservice.dto.AccountDto;
 import com.account_service.accountservice.service.AccountService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Slice;
 import org.springframework.http.ResponseEntity;
 import com.account_service.accountservice.entity.Account;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -18,27 +19,27 @@ public class AccountController {
 
 
     @GetMapping
-    public ResponseEntity<List<Account>> getAll(){
+    public ResponseEntity<Slice<AccountDto>> getAll(Pageable pageable){
 
-        return ResponseEntity.ok(accountService.getAll());
+        return ResponseEntity.ok(accountService.getAll(pageable));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Account> get(@PathVariable String id){
+    public ResponseEntity<AccountDto> get(@PathVariable String id){
 
             return ResponseEntity.ok(accountService.get(id));
     }
 
 
     @PostMapping
-    public ResponseEntity<Account> save(@RequestBody Account account){
+    public ResponseEntity<AccountDto> save(@RequestBody AccountDto account){
 
         return ResponseEntity.ok(accountService.save(account));
 
     }
 
     @PutMapping
-    public ResponseEntity<Account> update(@PathVariable("id") String id, @RequestBody Account account){
+    public ResponseEntity<AccountDto> update(@PathVariable("id") String id, @RequestBody AccountDto account){
 
         return ResponseEntity.ok(accountService.update(id,account));
     }
