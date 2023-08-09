@@ -10,6 +10,7 @@ services:
   mysql:
     image: mysql
     environment:
+      ES_JAVA_OPTS: -Xms512m -Xmx512m
       MYSQL_ROOT_PASSWORD: admin
     ports:
       - '3306:3306'
@@ -20,4 +21,5 @@ services:
       - 9200:9200
       - 9300:9300
     environment:
-      discovery.type: single- node
+      ES_JAVA_OPTS: -Xms512m -Xmx512m
+      discovery.type: single-node
